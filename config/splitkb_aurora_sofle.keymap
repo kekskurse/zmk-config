@@ -21,18 +21,18 @@
     keymap {
         compatible = "zmk,keymap";
 
-        left_encoder: encoder_left {
+        /*left_encoder: encoder_left {
           steps = <30>; // default is 80, datasheet says 15
         };
 
         right_encoder: encoder_right {
           steps = <30>; // default is 80, datasheet says 15
-        };
+        };*/
 
         sensors {
           compatible = "zmk,keymap-sensors";
-          sensors = <&left_encoder &right_encoder>;
-          //triggers-per-rotation = <30>; // default is 20
+          //sensors = <&left_encoder &right_encoder>;
+          triggers-per-rotation = <30>; // default is 20
         };
 
     default_layer {
