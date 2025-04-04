@@ -21,7 +21,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        left_encoder: encoder_left {
+          steps = <30>; // default is 80, datasheet says 15
+        };
+
+        right_encoder: encoder_right {
+          steps = <30>; // default is 80, datasheet says 15
+        };
+
+        sensors {
+          compatible = "zmk,keymap-sensors";
+          sensors = <&left_encoder &right_encoder>;
+          //triggers-per-rotation = <30>; // default is 20
+        };
+
+    default_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
@@ -36,7 +50,7 @@
                  &kp LCTRL &kp LALT &kp LGUI &mo 1  &kp SPACE  &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down>;
         };
 
         lower_layer {
@@ -54,7 +68,7 @@
                             &trans            &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down>;
         };
 
         raise_layer {
@@ -72,7 +86,7 @@
                  &trans &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_up_down>;
         };
     };
 };
