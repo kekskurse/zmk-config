@@ -31,6 +31,15 @@
           //sensors = <&left_encoder &right_encoder>;
           triggers-per-rotation = <50>; // default is 20
         };
+
+        behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SPACE>, <&caps_word>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -47,7 +56,7 @@
 &kp TAB   &kp Q  &kp W     &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O    &kp P    &kp LBKT
 &kp LCTRL &kp A  &kp S     &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X     &kp C    &kp V    &kp B  &kp LBKT   &kp RBKT &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LCTRL &kp LALT &kp LGUI &mo 1  &kp SPACE  &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
+                 &kp LCTRL &kp LALT &kp LGUI &mo 1  &td0       &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_DN C_VOL_UP >;
