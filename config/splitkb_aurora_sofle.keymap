@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SPACE>, <&caps_word>;
+            bindings = <&kp SPACE>, <&sk LSHFT>;
         };
     };
     keymap {
