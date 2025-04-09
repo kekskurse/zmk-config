@@ -33,7 +33,7 @@
         };
 
         macros {
-        zed_em_kay: questenmark {
+        questenmark: questenmark {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -48,7 +48,7 @@
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp SPACE>, <&sk LSHFT>;
         };
     };
