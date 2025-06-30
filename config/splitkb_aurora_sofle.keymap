@@ -53,6 +53,17 @@
             tapping-term-ms = <300>;
             bindings = <&kp SPACE>, <&sk LSHFT>;
         };
+mk_scroll_1: mk_scroll_down {
+            compatible = "zmk,behavior-mouse-key";
+            label = "Scroll Down";
+            bindings = <&mk_scroll 0 -1>;
+        };
+
+        mk_scroll_2: mk_scroll_up {
+            compatible = "zmk,behavior-mouse-key";
+            label = "Scroll Up";
+            bindings = <&mk_scroll 0 1>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -73,7 +84,7 @@
                  &kp LCTRL &kp LALT &kp LGUI &mo 1  &td0       &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
-            sensor-bindings = <&msc SCRL_DOWN SCRL_UP &inc_dec_kp C_VOL_DN C_VOL_UP >;
+            sensor-bindings = <&inc_dec_kp mk_scroll_1 mk_scroll_2 &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         lower_layer {
