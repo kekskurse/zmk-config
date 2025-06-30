@@ -56,13 +56,13 @@
 mk_scroll_1: mk_scroll_down {
             compatible = "zmk,behavior-mouse-key";
             label = "Scroll Down";
-            bindings = <&mk_scroll 0 -1>;
+            bindings = <&msc SCRL_DOWN>;
         };
 
         mk_scroll_2: mk_scroll_up {
             compatible = "zmk,behavior-mouse-key";
             label = "Scroll Up";
-            bindings = <&mk_scroll 0 1>;
+            bindings = <&msc SCRL_UP>;
         };
     };
     keymap {
