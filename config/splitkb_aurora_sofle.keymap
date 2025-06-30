@@ -64,6 +64,18 @@ mk_scroll_1: mk_scroll_down {
             label = "Scroll Up";
             bindings = <&msc SCRL_UP>;
         };
+
+vol_down: vol_down {
+    compatible = "zmk,behavior-key-press";
+    label = "Volume Down";
+    bindings = <&kp C_VOL_DN>;
+};
+
+vol_up: vol_up {
+    compatible = "zmk,behavior-key-press";
+    label = "Volume Up";
+    bindings = <&kp C_VOL_UP>;
+};
     };
     keymap {
         compatible = "zmk,keymap";
@@ -84,7 +96,7 @@ mk_scroll_1: mk_scroll_down {
                  &kp LCTRL &kp LALT &kp LGUI &mo 1  &td0       &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp &mk_scroll_1 &mk_scroll_2 &inc_dec_kp C_VOL_DN C_VOL_UP >;
+            sensor-bindings = <&inc_dec_kp &mk_scroll_1 &mk_scroll_2 &inc_dec_kp &vol_down &vol_up>;
         };
 
         lower_layer {
