@@ -84,7 +84,7 @@ mk_scroll_1: mk_scroll_down {
                  &kp LCTRL &kp LALT &kp LGUI &mo 1  &td0       &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp mk_scroll_1 mk_scroll_2 &inc_dec_kp C_VOL_DN C_VOL_UP >;
+            sensor-bindings = <&inc_dec_kp &mk_scroll_1 &mk_scroll_2 &inc_dec_kp C_VOL_DN C_VOL_UP >;
         };
 
         lower_layer {
