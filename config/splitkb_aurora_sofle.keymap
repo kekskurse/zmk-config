@@ -96,7 +96,7 @@ vol_up: vol_up {
                  &kp LCTRL &kp LALT &kp LGUI &mo 1  &td0       &kp RET  &mo 2  &kp BSPC &kp RGUI  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp &mk_scroll_1 &mk_scroll_2 &inc_dec_kp &vol_down &vol_up>;
+            sensor-bindings = <&inc_dec_kp &mk_scroll_1 &mk_scroll_2>, <&inc_dec_kp &vol_down &vol_up>;
         };
 
         lower_layer {
