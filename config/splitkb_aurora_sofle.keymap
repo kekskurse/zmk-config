@@ -54,7 +54,7 @@
             tapping-term-ms = <300>;
             bindings = <&kp SPACE>, <&sk LSHFT>;
         };
-mk_scroll_1: mk_scroll_down {
+/* mk_scroll_1: mk_scroll_down {
             compatible = "zmk,behavior-mouse-key";
             label = "Scroll Down";
             bindings = <&msc SCRL_DOWN>;
@@ -77,6 +77,7 @@ vol_up: vol_up {
     label = "Volume Up";
     bindings = <&kp C_VOL_UP>;
 };
+*/
     };
     keymap {
         compatible = "zmk,keymap";
